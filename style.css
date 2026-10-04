@@ -1,0 +1,75 @@
+<?php
+
+/**
+ * Estilos del plugin archiveorg
+ *
+ * @license GPL 2 (http://www.gnu.org/licenses/gp.html)
+ */
+
+.archiveorg-wrapper {
+    margin: 1.5em auto;
+    max-width: 100%;
+}
+
+.archiveorg-align-left {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.archiveorg-align-center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.archiveorg-align-right {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+/*
+ * El iframe va absoluto dentro de una caja con la proporción pedida, así el
+ * alto se calcula solo y el reproductor nunca se descuadra al cambiar el
+ * ancho de la ventana. La proporción llega por variable desde el plugin.
+ */
+.archiveorg-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: var(--archiveorg-ratio, 16 / 9);
+    background: #000;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+/* Respaldo para navegadores sin aspect-ratio */
+@supports not (aspect-ratio: 1 / 1) {
+    .archiveorg-frame {
+        height: 0;
+        padding-bottom: 56.25%;
+    }
+}
+
+.archiveorg-frame iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+.archiveorg-link {
+    margin: 0.5em 0 0;
+    font-size: 0.85em;
+    text-align: center;
+}
+
+.archiveorg-error {
+    margin: 1em 0;
+    padding: 0.5em 0.75em;
+    border-left: 4px solid #c00;
+    background: #fdecea;
+}
+
+.archiveorg-error code {
+    word-break: break-all;
+}

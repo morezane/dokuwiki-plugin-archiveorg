@@ -1,0 +1,7 @@
+base   archiveorg
+author morezane
+email  pfr.morezane@morezane.cl
+date   2026-10-04
+name   Archive.org Embed Plugin
+desc   Inserta un reproductor de Internet Archive con {{archiveorg>identificador}}
+url    https://github.com/morezane/dokuwiki-plugin-archiveorg
